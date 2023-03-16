@@ -11,7 +11,7 @@
 <body>
 
 <?php include("menu.php"); ?>
-<div class="container">
+<div class="container col-md-6 col-md-offset-6 col-lg-6 col-lg-offset-3">
     <div class="panel panel-primary margetop">
       <div class="panel-heading">Ajouter Une Nouvelle Filière</div>
       <div class="panel-body"> 

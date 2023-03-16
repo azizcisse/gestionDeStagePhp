@@ -22,15 +22,16 @@
 <body>
 
 <?php include("menu.php"); ?>
-<div class="container">
+<div class="container col-md-6 col-md-offset-6 col-lg-6 col-lg-offset-3">
     <div class="panel panel-primary margetop">
       <div class="panel-heading">Modification de la Filière</div>
       <div class="panel-body"> 
         <form method="post" action="updateFiliere.php" class="form">
-
+            
+            
             <div class="form-group">
             <label for="idF"> Id de la filière:</label>
-            <input type="text" name="idF" class="form-control" value="<?php echo $idf ?>"/>
+            <input type="hidden" name="idF" class="form-control" value="<?php echo $idf ?>"/>
             </div>
 
             <div class="form-group">
