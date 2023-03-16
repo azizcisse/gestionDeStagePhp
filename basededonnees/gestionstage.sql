@@ -9,7 +9,7 @@ create table stagiaire(
     nom varchar(50),
     civilite varchar(50),
     photo varchar(100), 
-    idFiliere int(4),
+    idFiliere int(4)
 );
 
 create table filiere(
@@ -55,7 +55,7 @@ INSERT INTO utilisateur(login,email,role,etat,pwd) VALUES
     ('user1','user1@gmail.com','VISITEUR',0,md5('123')),
     ('user2','user2@gmail.com','VISITEUR',1,md5('123'));	
 
-INSERT INTO stagiaire(nom,prenom,civilite,photo,idFiliere) VALUES
+INSERT INTO stagiaire(prenom,nom,civilite,photo,idFiliere) VALUES
     ('Fatou','DIOUF','F','Chrysantheme.jpg',1),
 	('Abdou','SARR','M','Desert.jpg',2),
 	('Coumba','FALL','F','Hortensias.jpg',3),
