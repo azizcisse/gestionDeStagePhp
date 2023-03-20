@@ -1,4 +1,6 @@
 <?php
+ require_once "identifier.php";
+
  require_once "connexiondb.php";
 
  $idf = isset($_GET['idF'])?$_GET['idF']:0;
@@ -26,12 +28,12 @@
     <div class="panel panel-primary margetop">
       <div class="panel-heading">Modification de la Filière</div>
       <div class="panel-body"> 
-        <form method="post" action="updateFiliere.php" class="form">
+        <form method="post" action="updateFiliere.php" class="form" enctype="multipart/form-data">
             
             
             <div class="form-group">
-            <label for="idF"> Id de la filière:</label>
-            <input type="hidden" name="idF" class="form-control" value="<?php echo $idf ?>"/>
+            <!-- label for="idF"> Id de la filière: </label -->
+            <input type="hidden" name="idF" class="form-control" value=""/>
             </div>
 
             <div class="form-group">
@@ -58,7 +60,7 @@
                       </div>
                 
 
-                    <button type="submit" class="btn btn-success mb-3">
+                    <button type="submit" class="btn btn-success">
                     <span class="glyphicon glyphicon-save"></span>
                       Ajouter</button>
          </form>

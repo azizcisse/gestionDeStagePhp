@@ -1,12 +1,8 @@
 <?php
+require_once "identifier.php";
+
 require_once "connexiondb.php";
 
-/*
-if (isset($_GET['nomF']))
-$nomf=$_GET['nomF'];
-else
-$nomf="";
- */
 $nomf = isset($_GET['nomF']) ? $_GET['nomF'] : "";
 $niveau = isset($_GET['niveau']) ? $_GET['niveau'] : "all";
 
@@ -115,7 +111,10 @@ if ($reste === 0) {
             <table class="table table-striped table-bordered">
                 <thead>
                     <tr>
-                        <th>Numéro Filière</th> <th>Nom de la Filière</th> <th>Niveaux</th> <th>Actions</th>
+                        <th>Numéro Filière</th> <th>Nom de la Filière</th> <th>Niveaux</th> 
+                        <?php if($_SESSION['utilisateur']['role'] == 'ADMIN') { ?>
+                        <th>Actions</th>
+                        <?php }?>
                     </tr>
                 </thead>
                 <tbody>
@@ -126,6 +125,8 @@ if ($reste === 0) {
                         <td><?php echo $filiere["idFiliere"] ?></td>
                         <td><?php echo $filiere["nomFiliere"] ?></td>
                         <td><?php echo $filiere["niveau"] ?></td>
+
+                        <?php if($_SESSION['utilisateur']['role'] == 'ADMIN') { ?>
                         <th>
                           <a href="editerFiliere.php?idF=<?php echo $filiere["idFiliere"] ?>">
                           <span class="glyphicon glyphicon-edit btn btn-info"></span>
@@ -136,11 +137,10 @@ if ($reste === 0) {
                        <span class="glyphicon glyphicon-trash btn btn-danger"></span>
                       </a>
                     </th>
-                        </tr>
-
-                        <?php }?>
-
-                </tbody>
+                    <?php }?>
+                  </tr>
+               <?php }?>
+             </tbody>
             </table>
             <div>
               <ul class="pagination">

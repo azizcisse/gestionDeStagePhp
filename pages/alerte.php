@@ -1,6 +1,7 @@
 <?php 
-$message = isset($_GET['message'])?$_GET['message']:"Erreur";
+require_once "identifier.php";
 
+$message = isset($_GET['message'])?$_GET['message']:"Erreur";
 
 ?>
 

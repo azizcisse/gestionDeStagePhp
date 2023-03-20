@@ -1,5 +1,7 @@
 <?php
-     require_once("connexiondb.php");
+     require_once "identifier.php";
+
+     require_once "connexiondb.php";
   
     $prenomNom=isset($_GET['prenomNom'])?$_GET['prenomNom']:"";
     $idfiliere=isset($_GET['idfiliere'])?$_GET['idfiliere']:0;
@@ -114,7 +116,10 @@
                 <thead>
                     <tr>
                         <th>Numéro Stagiaire</th> <th>Prénom</th> <th>Nom</th> <th>Civilité</th>
-                        <th>Filière</th> <th>Photo</th> <th>Actions</th>
+                        <th>Filière</th> <th>Photo</th> 
+                        <?php if($_SESSION['utilisateur']['role'] == 'ADMIN') { ?>
+                        <th>Actions</th>
+                        <?php }?>
                     </tr>
                 </thead>
                 <tbody>
@@ -129,7 +134,9 @@
                         <td><?php echo $stagiaire["nomFiliere"] ?></td>
                         <td><img src="../images/<?php echo $stagiaire['photo']?>"
                                   width="50px" height="50px" class="img-circle"></td>
-                        <th>
+                      
+                      <?php if($_SESSION['utilisateur']['role'] == 'ADMIN') { ?>
+                       <th>
                           <a href="editerStagiaire.php?idS=<?php echo $stagiaire["idStagiaire"] ?>">
                           <span class="glyphicon glyphicon-edit btn btn-info"></span>
                         </a>
@@ -139,15 +146,14 @@
                        <span class="glyphicon glyphicon-trash btn btn-danger"></span>
                       </a>
                     </th>
-                        </tr>
-
-                        <?php }?>
-
-                </tbody>
+                    <?php }?>
+                   </tr>
+                 <?php }?>
+               </tbody>
             </table>
             <div>
               <ul class="pagination">
-              <?php fOR ($i = 1; $i <= $nbrpage; $i++) {?>
+              <?php for ($i = 1; $i <= $nbrpage; $i++) {?>
                 <li class="<?php if ($i == $page) {
                   echo 'active';
                 }?>">

@@ -1,5 +1,5 @@
-drop database if not exists gestionstage,
-create database if not exists gestionstage,
+drop database if exists gestionstage;
+create database if not exists gestionstage;
 
 use gestionstage;
 
