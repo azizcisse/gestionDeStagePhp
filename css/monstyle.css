@@ -5,7 +5,7 @@
     cursor: pointer;
 }
 
-.margetop60{
+.margetop{
     margin-top: 60px;
 }
 
@@ -59,7 +59,7 @@ h1{
 }
 
 .editpwd-page form{
-    width: 400px;
+    width: 500px;
     margin: auto;
 }
 

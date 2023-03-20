@@ -6,7 +6,9 @@ $login = isset($_POST['login']) ? $_POST['login'] : "";
 
 $pwd = isset($_POST['pwd']) ? $_POST['pwd'] : "";
 
-$requete = "SELECT * FROM utilisateur WHERE login='$login' AND pwd=MD5('$pwd')";
+$requete="SELECT idUser,login,email,role,etat 
+from utilisateur WHERE login='$login' 
+AND pwd=MD5('$pwd')";
 
 $resultat = $pdo->query($requete);
 

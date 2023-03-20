@@ -112,9 +112,10 @@ if ($reste === 0) {
                 <thead>
                     <tr>
                         <th>Numéro Filière</th> <th>Nom de la Filière</th> <th>Niveaux</th> 
-                        <?php if($_SESSION['utilisateur']['role'] == 'ADMIN') { ?>
-                        <th>Actions</th>
-                        <?php }?>
+                        <?php if ($_SESSION['utilisateur']['role']== 'ADMIN') {?>
+                                	<th>Actions</th>
+                                <?php }?>
+                      
                     </tr>
                 </thead>
                 <tbody>

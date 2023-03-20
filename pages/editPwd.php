@@ -19,7 +19,7 @@ require_once('identifier.php');
 <div class="container editpwd-page">
     <h1 class="text-center">Changement de mot de passe</h1>
 
-    <h2 class="text-center"> Compte :<?php echo $_SESSION['utilisateur']['login'] ?>    </h2>
+    <h2 class="text-center"> Compte :<?php echo $_SESSION['utilisateur']['login'] ?> </h2>
 
     <form class="form-horizontal" method="post" action="updatePwd.php">
 
